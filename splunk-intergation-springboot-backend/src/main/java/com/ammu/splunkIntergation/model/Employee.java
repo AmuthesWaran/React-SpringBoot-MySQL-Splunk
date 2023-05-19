@@ -21,7 +21,7 @@ public class Employee {
     private String FirstName;
     private String LastName;
     private String Email;
-    private String PhoneNumber;
+    private String MobileNumber;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate HireDate;
     private String DepartmentName;
