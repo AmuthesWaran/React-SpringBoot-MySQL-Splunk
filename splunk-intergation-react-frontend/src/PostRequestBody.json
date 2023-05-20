@@ -1,0 +1,12 @@
+{
+    "employeeID": 1,
+    "firstName": null,
+    "lastName": null,
+    "email": null,
+    "mobileNumber": null,
+    "HireDate": null,
+    "departmentName": null,
+    "location": null,
+    "salary": null,
+    "hireDate": null
+}

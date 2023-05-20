@@ -8,12 +8,12 @@ public interface EmployeeService {
     //POST
     public Employee addAnEmployee(Employee employee);
     //GET an Employee
-    public Employee findEmployeeById(Long employeeId);
+    public Employee findEmployeeById(Integer employeeId);
     // GET all Employee
     public List<Employee> getAllEmployee();
     // PUT an Employee
     public Employee amendAnEmployee(Employee employee);
     //Delete an Employee
-    public Employee deleteAnEmployee(Long employeeId);
+    public Employee deleteAnEmployee(Integer employeeId);
 
 }

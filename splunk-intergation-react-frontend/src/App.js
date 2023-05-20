@@ -11,7 +11,7 @@ function App() {
           <Col lg={4} md={6} sm={9} className="p-3 m-auto shadow-lg rounded-lg bg-light">
 
             <Form className='bg-light'>
-              <h4 className='text-center ' >Employee Portal</h4>
+              <h4 className='text-center' >Employee Portal</h4>
 
               <FloatingLabel controlId="EmployeeID" label="Employee ID" className="mb-3" autoComplete="off" >
                 <Form.Control type="number" placeholder="1234567"
@@ -74,8 +74,10 @@ function App() {
 
               <div className='text-center span2'>
 
-                <Button type='submit' variant="primary" className='mb-2 mt-2 m-3 btn-block' >Sign Up</Button>
-                <Button type='reset' variant="warning" className='mb-2 mt-2 btn-block' >Reset</Button>
+                <Button type='submit' variant="primary" className='mb-2 mt-2 m-3 btn-block' >Add</Button>
+                <Button type='reset' variant="danger" className='mb-2 mt-2 m-3 btn-block' >Delete</Button>
+                <Button type='reset' variant="warning" className='mb-2 mt-2 m-3 btn-block' >Update</Button>
+                <Button type='reset' variant="warning" className='mb-2 mt-2 m-3 btn-block' >Refresh</Button>
 
               </div>
 
