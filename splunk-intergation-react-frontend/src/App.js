@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 
 function App() {
+
+  const departmentList = ['Beijing', 'Bern', 'Mumbai', 'Chennai', 'Geneva', 'Hiroshima', 'London', 'Munich', 'Sao Paulo', 'Seattle', 'Sydney', 'Tokyo']
+
+
+  const [selectedDepartmentList, setSelectedDepartmentList] = useState('Beijing')
+  console.log(selectedDepartmentList);
+
   return (
     <div >
 
       <Container>
         <Row className="mt-4  pt-4">
-          <Col lg={4} md={6} sm={9} className="p-3 m-auto shadow-lg rounded-lg bg-light">
+          <Col lg={4} md={6} sm={9} className="p-3 m-auto shadow-lg bg-light">
 
             <Form className='bg-light'>
               <h4 className='text-center' >Employee Portal</h4>
@@ -62,6 +69,16 @@ function App() {
                 </Form.Control.Feedback>
 
               </FloatingLabel>
+              <FloatingLabel controlId="DepartmentName" label="Department Name" className="mb-3" autoComplete="off" >
+                <Form.Select name='Department Name' onChange={e => setSelectedDepartmentList(e.target.value)}>
+
+                  {
+                    departmentList.map(list => (
+                      <option key={list} >{list}</option>
+                    ))
+                  }
+                </Form.Select>
+              </FloatingLabel>
 
               <FloatingLabel controlId="Location" label="Location" className="mb-3" autoComplete="off" >
                 <Form.Control type="text" placeholder="Location"
@@ -74,10 +91,10 @@ function App() {
 
               <div className='text-center span2'>
 
-                <Button type='submit' variant="primary" className='mb-2 mt-2 m-3 btn-block' >Add</Button>
-                <Button type='reset' variant="danger" className='mb-2 mt-2 m-3 btn-block' >Delete</Button>
-                <Button type='reset' variant="warning" className='mb-2 mt-2 m-3 btn-block' >Update</Button>
-                <Button type='reset' variant="warning" className='mb-2 mt-2 m-3 btn-block' >Refresh</Button>
+                <Button type='submit' variant="primary" className='mb-2 mt-2 m-2 btn-block' >Add</Button>
+                <Button type='reset' variant="danger" className='mb-2 mt-2 m-2 btn-block' >Delete</Button>
+                <Button type='reset' variant="warning" className='mb-2 mt-2 m-2 btn-block' >Update</Button>
+                <Button type='reset' variant="warning" className='mb-2 mt-2 m-2 btn-block' >Refresh</Button>
 
               </div>
 
