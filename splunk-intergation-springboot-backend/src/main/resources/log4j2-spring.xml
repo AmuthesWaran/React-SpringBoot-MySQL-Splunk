@@ -8,11 +8,11 @@
         <SplunkHttp
                 name="splunkhttp"
                 url="http://localhost:8088"
-                token="dec8872a-6f2a-4364-a02e-e4c295be4c08"
+                token="6034ba65-87a3-4a5d-a9c6-059ebb5bf14f"
                 host="localhost"
-                index="employee_data_dev"
+                index="emp_service_dev"
                 type="raw"
-                source="employee-data-logs"
+                source="http-emp-logs"
                 sourcetype="log4j"
                 messageFormat="text"
                 disableCertificateValidation="true">
