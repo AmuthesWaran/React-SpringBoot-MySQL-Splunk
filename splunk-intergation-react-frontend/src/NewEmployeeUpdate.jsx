@@ -7,7 +7,11 @@ const NewEmployeeUpdate = () => {
 
     const locationList = ['Beijing', 'Bern', 'Mumbai', 'Chennai', 'Geneva', 'Hiroshima', 'London', 'Munich', 'Sao Paulo', 'Seattle', 'Sydney', 'Tokyo']
 
-
+    // const [employeeId, setEmployeeId] = useState();
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setlastName] = useState('')
+    const [mobileNumber, setmobileNumber] = useState(0);
+    const [hireDate, setHireDate] = useState('')
     const [selectedDepartmentList, setSelectedDepartmentList] = useState('Beijing')
     const [selectedLocationList, setSelectedLocationList] = useState('Administration')
     console.log(selectedDepartmentList);
@@ -22,12 +26,13 @@ const NewEmployeeUpdate = () => {
                         <Form className='bg-light'>
                             <h4 className='text-center' >Employee Portal</h4>
 
-                            <FloatingLabel controlId="EmployeeID" label="Employee ID" className="mb-3" autoComplete="off" >
+                            {/* <FloatingLabel controlId="EmployeeID" label="Employee ID" className="mb-3" autoComplete="off" >
                                 <Form.Control type="number" placeholder="1234567"
+
                                 />
                                 <Form.Control.Feedback type='invalid'>
                                 </Form.Control.Feedback>
-                            </FloatingLabel>
+                            </FloatingLabel> */}
 
                             <FloatingLabel controlId="FirstName" label="First Name" className="mb-3" autoComplete="off" >
                                 <Form.Control type="text" placeholder="First Name"
