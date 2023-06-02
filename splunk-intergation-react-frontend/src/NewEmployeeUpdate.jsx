@@ -20,6 +20,19 @@ const NewEmployeeUpdate = () => {
 
     const addAnEmployee = () => {
 
+        const newEmployee = {
+            "HireDate": "null",
+            "location": null,
+            "firstName": null,
+            "lastName": null,
+            "email": null,
+            "mobileNumber": null,
+            "hireDate": null,
+            "departmentName": null,
+            "employeeID": 4,
+            "salary": null
+        }
+
         axios.post(`http://localhost:8082/api/v1/employee`, newEmployee)
             .then(res => console.log(res))
 
