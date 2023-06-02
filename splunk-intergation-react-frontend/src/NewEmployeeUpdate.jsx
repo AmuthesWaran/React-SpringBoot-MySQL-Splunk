@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
 
@@ -16,6 +17,13 @@ const NewEmployeeUpdate = () => {
     const [selectedLocationList, setSelectedLocationList] = useState('Administration')
     console.log(selectedDepartmentList);
     console.log(selectedLocationList);
+
+    const addAnEmployee = () => {
+
+        axios.post(`http://localhost:8082/api/v1/employee`, newEmployee)
+            .then(res => console.log(res))
+
+    }
 
     return (
         <div>
@@ -36,6 +44,10 @@ const NewEmployeeUpdate = () => {
 
                             <FloatingLabel controlId="FirstName" label="First Name" className="mb-3" autoComplete="off" >
                                 <Form.Control type="text" placeholder="First Name"
+                                    onChange={(e) => {
+                                        setFirstName(e.target.value)
+                                        console.log(firstName);
+                                    }}
 
                                 />
                                 <Form.Control.Feedback type='invalid'>
@@ -45,7 +57,10 @@ const NewEmployeeUpdate = () => {
 
                             <FloatingLabel controlId="LastName" label="Last Name" className="mb-3" autoComplete="off" >
                                 <Form.Control type="text" placeholder="Last Name"
-
+                                    onChange={(e) => {
+                                        setlastName(e.target.value)
+                                        console.log(lastName);
+                                    }}
                                 />
                                 <Form.Control.Feedback type='invalid'>
                                 </Form.Control.Feedback>
@@ -54,6 +69,10 @@ const NewEmployeeUpdate = () => {
 
                             <FloatingLabel controlId="MobileNumber" label="Mobile Number" className="mb-3" autoComplete="off" >
                                 <Form.Control type="number" placeholder="Mobile Number"
+                                    onChange={(e) => {
+                                        setmobileNumber(e.target.value)
+                                        console.log(mobileNumber);
+                                    }}
                                 />
                                 <Form.Control.Feedback type='invalid'>
                                 </Form.Control.Feedback>
@@ -62,6 +81,10 @@ const NewEmployeeUpdate = () => {
 
                             <FloatingLabel controlId="HireDate" label="Hire Date" className="mb-3" autoComplete="off" >
                                 <Form.Control type="date" placeholder="Hire Date"
+                                    onChange={(e) => {
+                                        setHireDate(e.target.value)
+                                        console.log(hireDate);
+                                    }}
                                 />
                                 <Form.Control.Feedback type='invalid'>
                                 </Form.Control.Feedback>
@@ -92,10 +115,7 @@ const NewEmployeeUpdate = () => {
 
                             <div className='text-center span2'>
 
-                                <Button type='submit' variant="primary" className='mb-2 mt-2 m-2 btn-block' >Add</Button>
-                                <Button type='reset' variant="danger" className='mb-2 mt-2 m-2 btn-block' >Delete</Button>
-                                <Button type='reset' variant="warning" className='mb-2 mt-2 m-2 btn-block' >Update</Button>
-                                <Button type='reset' variant="warning" className='mb-2 mt-2 m-2 btn-block' >Refresh</Button>
+                                <Button variant="primary" className='mb-2 mt-2 m-2 btn-block' onClick={addAnEmployee} >Add</Button>
 
                             </div>
 
