@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements  EmployeeService {
 
     @Override
     public Employee addAnEmployee(Employee employee) {
-        logger.info("New Employee is saved. Employee ID is: {}", employee.getEmployeeID());
+        logger.info("New Employee is saved. Employee ID is: {}", employee.getFirstName());
         return empRepo.save(employee);
     }
 
@@ -56,7 +56,7 @@ public class EmployeeServiceImpl implements  EmployeeService {
         }
         empRepo.deleteById(employeeId);
 
-        logger.info("An Employee is deleted. Employee ID: {}", deletedEmp.getEmployeeID());
+        logger.info("An Employee is deleted. Employee ID: {}", deletedEmp.getEmpid());
         return deletedEmp;
     }
 }

@@ -2,7 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NewEmployeeUpdate from './NewEmployeeUpdate';
+import { Route, Routes } from 'react-router-dom';
+import Display from './Display';
+import NewEmployeeUpdate from './components/NewEmployeeUpdate';
 
 function App() {
 
@@ -23,7 +25,12 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <NewEmployeeUpdate />
+
+
+      <Routes>
+        <Route path='/' element={<NewEmployeeUpdate />} ></Route>
+        <Route path='/display' element={<Display />} ></Route>
+      </Routes>
 
     </div>
   );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const NewEmployeeUpdate = () => {
 
@@ -18,23 +19,37 @@ const NewEmployeeUpdate = () => {
     console.log(selectedDepartmentList);
     console.log(selectedLocationList);
 
+    const navigate = useNavigate()
+
     const addAnEmployee = () => {
 
+        //  "HireDate": null,
+        // "location": null,
+        // "hireDate": null,
+        // "mobileNumber": null,
+        // "departmentName": null,
+        // "lastName": null,
+        // "email": "employee@natwest.com",
+        // "firstName": null,
+        // "salary": null,
+        // "employeeID": 40
+
         const newEmployee = {
-            "HireDate": "null",
-            "location": null,
-            "firstName": null,
-            "lastName": null,
-            "email": null,
-            "mobileNumber": null,
-            "hireDate": null,
-            "departmentName": null,
-            "employeeID": 4,
-            "salary": null
+
+            "location": selectedLocationList,
+            "firstName": firstName,
+            "lastName": lastName,
+            "mobileNumber": mobileNumber,
+            "departmentName": selectedDepartmentList,
+
         }
+
+        localStorage.setItem('user', JSON.stringify(newEmployee))
 
         axios.post(`http://localhost:8082/api/v1/employee`, newEmployee)
             .then(res => console.log(res))
+
+        navigate('/display')
 
     }
 

@@ -13,7 +13,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-public class EmployeeController {
+@CrossOrigin
+        public class EmployeeController {
 
     Logger logger = LogManager.getLogger(EmployeeController.class);
 

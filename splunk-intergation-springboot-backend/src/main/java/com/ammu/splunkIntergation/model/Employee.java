@@ -7,27 +7,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "Employees")
+@Table(name = "employees")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer EmployeeID;
-    private String FirstName;
-    private String LastName;
-    private String Email;
-    private String MobileNumber;
+    @Column(name="empid")
+    private Integer empid;
+    @Column(name="firstname")
+    private String firstName;
+    @Column(name="lastname")
+    private String lastName;
+    private String email;
+    @Column(name="mobileno")
+    private String mobileNo;
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate HireDate;
-    private String DepartmentName;
-    private String Location;
-    private BigDecimal Salary;
+    @Column(name="hiredate")
+    private LocalDate hireDate;
+    @Column(name="deptname")
+    private String deptName;
+    private String location;
+    private BigDecimal salary;
 
 
 }
