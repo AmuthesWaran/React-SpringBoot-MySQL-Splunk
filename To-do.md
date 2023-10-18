@@ -4,3 +4,6 @@
 * logs
 * employee and hr portal system
 * auth based on role
+* exception layer
+* testing
+* jwt 
